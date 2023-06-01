@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    
+  </head>
+  <style>
+    img {
+  border-radius: 50%;
+}
+  </style>
+  <script>
+
+    var profile = {
+        name : 'Manasa Manthena',
+        role : 'Java Full Stack Developer',
+        about: 'Master Student with 8 years Experience',
+        dob: '08-08-1990',
+        contact: '+11111111111',
+        email: 'dbdjhcdj@gmail.com',
+        hobies: [
+            'reading','writing','singing','binge watching','movies'
+        ],
+        nationality: 'India',
+        address: 'New Jersy',
+        country: 'USA'
+    };
+    console.log(profile.name);
+    var lastIndex = profile.hobies.length
+    console.log(lastIndex)
+    console.log(profile.hobies[lastIndex-1]);
+  </script>
+  <body >
+     <div>
+        <img src="Profile.JPG" alt="Girl in a jacket" width="250" height="250">
+        <!-- <p>Name:</p> -->
+        <p id="Name"></p>
+        <script> document.getElementById("Name").innerHTML ="Name : " + profile.name; </script>
+     </div>  
+     <div>
+        <p id="Role"></p>
+        <script> document.getElementById("Role").innerHTML ="Role : " + profile.role; </script>
+        <p id="about"></p>
+        <script> document.getElementById("about").innerHTML ="About : " + profile.about; </script>
+        <p id="dob"></p>
+        <script> document.getElementById("dob").innerHTML ="Date Of Birth : " + profile.dob; </script>
+        <p id="contact"></p>
+        <script> document.getElementById("contact").innerHTML ="Contact : " + profile.contact; </script>
+        <p id="email"></p>
+        <script> document.getElementById("email").innerHTML ="Email : " + profile.email; </script>
+        <p id="hobies"></p>
+        <script> document.getElementById("hobies").innerHTML ="Hobbies : " + profile.hobies[lastIndex-1]; </script>
+        <p id="nationality"></p>
+        <script> document.getElementById("nationality").innerHTML ="Nationality : " + profile.nationality; </script>
+        <p id="address"></p>
+        <script> document.getElementById("address").innerHTML ="Address : " + profile.address; </script>
+        <p id="country"></p>
+        <script> document.getElementById("country").innerHTML ="Country : " + profile.country; </script>
+    </div> 
+  </body>
+</html>

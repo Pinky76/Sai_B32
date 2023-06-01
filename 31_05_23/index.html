@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    
+  </head>
+  <script>
+    var car = {
+        model : '2023',
+        brand : 'RR',
+        color: '',
+        engine: [{
+            type: 'hybrid',
+            torque: 520,
+            engineModel:{
+                type: 'v8',
+            }
+        }]
+    };
+    console.log(car.engine[0].engineModel.type);
+    // var carList = [];
+    var list = [];
+    list.push(0)
+    list.push(1)
+    list.push(2)
+    list.push(4)
+    console.log(list);
+    const ind = list.findIndex(v => v === 4);
+    // add(list, 10);
+    console.log(ind);
+    list.splice(ind, 0, 3);
+    console.log(list);
+    
+     function add(array, v){
+         array.push(v);
+         return array;
+     }
+
+  </script>
+  <body >
+    
+        
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    
+  </head>
+  <script>
+    function sendAmount() {
+    var Sending_Amount = 200;
+    console.log("Intial Sending Value"+ Sending_Amount)
+    var envi = document.getElementById("envi").value;
+    console.log("Environment value is"+ envi)
+    document.getElementById("send").innerHTML = Sending_Amount;
+    
+    switch(envi){
+        case "Dev":
+            Sending_Amount = Sending_Amount + ((Sending_Amount/100)*10) ;
+            break
+        case "Test":
+            Sending_Amount = Sending_Amount + ((Sending_Amount/100)*20) ;
+            break
+        case "Stage":
+            Sending_Amount = Sending_Amount + ((Sending_Amount/100)*30) ;
+            break
+        case "Prod":
+        Sending_Amount = Sending_Amount + ((Sending_Amount/100)*5) ;
+            break
+        default:
+            Sending_Amount = 100
+            break
+    }
+    console.log("After Stwich Case"+ Sending_Amount)
+    document.getElementById("sendingAmount").innerHTML = Sending_Amount;
+}
+  </script>
+  <body >
+    <h1> Sending Amount based on Environment Values </h1>
+    Default Sending Amount:<p id="send"></p>
+    Environment: <input id="envi" type="text">
+    <button onclick="sendAmount()">Try it</button>
+    <br><br>
+    Sending Amount is:<p id="sendingAmount"></p>
+
+  </body>
+</html>
