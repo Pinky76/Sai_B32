@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+  <head>
+  </head>
+  <script>
+
+    var profile = {
+        fn : '',
+        ln : '',
+        role : '',
+        about: '',
+        dob: '',
+        contact: '',
+        email: '',
+        hobies: [
+            
+        ],
+        nationality: '',
+        address: '',
+        country: ''
+    };
+    var lastIndex = profile.hobies.length
+
+    function addHobbie() {
+    console.log(`Inside add Hobbie Function : Profile is : ${profile.name}`)
+    var newHobbie = document.getElementById("hobbie").value;
+    document.getElementById("hobbie").value = ''
+    profile.hobies.push(newHobbie);
+    console.log(`New Hobbie Added to the list : ${profile.hobies}`);
+    }
+
+   
+
+    
+
+    function DisplayProfile() {
+    profile.fn = document.getElementById("firstName").value;
+    profile.ln = document.getElementById("lastName").value;
+    profile.dob = document.getElementById("DOB").value;
+    profile.email = document.getElementById("email").value;
+    profile.contact = document.getElementById("phNum").value;
+    document.getElementById("fn").innerHTML = profile.fn;
+    document.getElementById("ln").innerHTML = profile.ln;
+    document.getElementById("dob").innerHTML = profile.dob;
+    document.getElementById("eid").innerHTML = profile.email;
+    document.getElementById("phn").innerHTML = profile.contact;
+    document.getElementById("hobbies").innerHTML = profile.hobies;
+    document.getElementById("firstName").value = ''
+    document.getElementById("lastName").value = ''
+    document.getElementById("DOB").value = ''
+    document.getElementById("email").value = '' 
+    document.getElementById("phNum").value = ''
+
+
+    }
+
+  </script>
+  <body > 
+    <div>
+        First Name: <input id="firstName" type="text">
+        <script> profile.fn = document.getElementById("firstName").innerHTML; </script>
+        <br><br>
+        Last Name: <input id="lastName" type="text">
+        <script> profile.ln = document.getElementById("lastName").innerHTML; </script>
+        <br><br>
+        Date Of Birth: <input id="DOB" type="text">
+        <script> profile.dob = document.getElementById("DOB").innerHTML; </script>
+        <br><br>
+        Email ID: <input id="email" type="text">
+        <script> profile.email = document.getElementById("email").innerHTML; </script>
+        <br><br>
+        Phone Number: <input id="phNum" type="text">
+        <script> profile.contact = document.getElementById("phNum").innerHTML; </script>
+        <br><br>
+        Add Hobbie: <input id="hobbie" type="text">
+        <button onclick="addHobbie()">Add</button>
+        <br> <br>
+        <button id="btn" onclick="DisplayProfile()">Display Profile</button> 
+    </div>
+    <h1>Latest Profile Information</h1>
+    <div>
+        First Name : <div id="fn"></div> 
+        Last Name : <div id="ln"></div> 
+        Date Of Birth : <div id="dob"></div> 
+        Email Id : <div id="eid"></div> 
+        Phone Number : <div id="phn"></div> 
+        Hobbies : <div id="hobbies"></div> 
+    </div>
+  </body>
+</html>
