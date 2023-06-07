@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html >
+  <head>
+  </head>
+  <script>
+    var profile = {
+        fn : '',
+        ln : '',
+        gender: '',
+        role : '',
+        about: '',
+        dob: '',
+        contact: '',
+        email: '',
+        hobies: [
+            
+        ],
+        nationality: '',
+        address: '',
+        country: ''
+    };
+    var lastIndex = profile.hobies.length
+
+    function addHobbie() {
+    console.log(`Inside add Hobbie Function : Profile is : ${profile.name}`)
+    var newHobbie = document.getElementById("hobbie").value;
+    document.getElementById("hobbie").value = ''
+    profile.hobies.push(newHobbie);
+    console.log(`New Hobbie Added to the list : ${profile.hobies}`);
+    }
+
+   
+
+    
+
+    function DisplayProfile() {
+    profile.fn = document.getElementById("firstName").value;
+    profile.ln = document.getElementById("lastName").value;
+    profile.gender = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+    profile.dob = document.getElementById("DOB").value;
+    profile.email = document.getElementById("email").value;
+    profile.contact = document.getElementById("phNum").value;
+    const hobbies = document.querySelectorAll(
+          'input[name="hobbies"]:checked'
+        );
+    hobbies.forEach((hobby) => {
+          profile.hobies.push(hobby.value);
+    });
+    document.getElementById("fn").innerHTML = `First Name : ${profile.fn}`;
+    document.getElementById("ln").innerHTML = `Last Name : ${profile.ln}`;
+    document.getElementById("displayGender").innerHTML = `Gender: ${profile.gender}`;
+    document.getElementById("dob").innerHTML = `Date Of Birth : ${profile.dob}`;
+    document.getElementById("eid").innerHTML = `Email Id : ${profile.email}`;
+    document.getElementById("phn").innerHTML = ` Phone Number : ${profile.contact}`;
+    document.getElementById("hobbies").innerHTML = `Hobbies : ${profile.hobies}`;
+    document.getElementById("firstName").value = ''
+    document.getElementById("lastName").value = ''
+    document.getElementById("DOB").value = ''
+    document.getElementById("email").value = '' 
+    document.getElementById("phNum").value = ''
+}
+  </script>
+  <body > 
+    <div>
+        First Name: <input id="firstName" type="text" required>
+        <script> profile.fn = document.getElementById("firstName").innerHTML; </script>
+        <br><br>
+        Last Name: <input id="lastName" type="text" required>
+        <script> profile.ln = document.getElementById("lastName").innerHTML; </script>
+        <br><br>
+        <input type="radio" id="male" name="gender" value="Male" required />Male
+        <input type="radio" id="female" name="gender" value="Female" required />Female
+        <br><br>
+        Date Of Birth: <input id="DOB" type="date" required>
+        <script> profile.dob = document.getElementById("DOB").innerHTML; </script>
+        <br><br>
+        Email ID: <input id="email" type="email" required>
+        <script> profile.email = document.getElementById("email").innerHTML; </script>
+        <br><br>
+        Phone Number: <input id="phNum" type="tel" required>
+        <script> profile.contact = document.getElementById("phNum").innerHTML; </script>
+        <br><br>
+        <label for="hobbies">Please Select Hobbies:</label><br />
+        <input type="checkbox" id="hobby1" name="hobbies" value="Reading" />
+        <label for="hobby1">Reading</label><br />
+        <input type="checkbox" id="hobby2" name="hobbies" value="Singing" />
+        <label for="hobby2">Singing</label><br />
+        <input type="checkbox" id="hobby3" name="hobbies" value="Dancing" />
+        <label for="hobby3">Dancing</label><br />
+        <input type="checkbox" id="hobby4" name="hobbies" value="Binge Watching" />
+        <label for="hobby4">Binge Watching</label><br /><br />
+        <br> <br>
+        <button id="btn" onclick="DisplayProfile()">Display Profile</button> 
+    </div>
+    <h1>Latest Profile Information</h1>
+    <div>
+       <div id="fn"></div> 
+         <div id="ln"></div> 
+         <div id="displayGender"></div>
+        <div id="dob"></div> 
+         <div id="eid"></div> 
+        <div id="phn"></div> 
+         <div id="hobbies"></div> 
+    </div>
+  </body>
+</html>
