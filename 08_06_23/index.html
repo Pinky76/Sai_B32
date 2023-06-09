@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Given Array is : </p>
+<p id = "object"></p>
+<br>
+<p>Sorted Array is : </p>
+<p id = "sorted"></p>
+<br>
+<p>Second Largest Number in the Array is : </p>
+<p id="second"></p>
+<script>
+Array.prototype.FindSecondSmallestNum = function(secondLargest) {
+    array.sort();
+    for(let i = 0; i < array.length; i++){
+        console.log(array[i]);
+    }
+};
+const array = [254,768,989,111,654,444];
+document.getElementById("object").innerHTML =  array;
+let secondLargest = 0;
+array.FindSecondSmallestNum(secondLargest);
+document.getElementById("sorted").innerHTML =  array;
+document.getElementById("second").innerHTML =  array[array.length - 2];
+</script>
+
+</body>
+</html>
